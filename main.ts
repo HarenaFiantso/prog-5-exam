@@ -1,16 +1,10 @@
-import { MarioKartCharacterFactory } from "./src/domains/factory/MarioKartCharacterFactory.ts";
-import { Character } from "./src/models/Character.ts";
 import { MarioKartSimulator } from "./src/MarioKartSimulator.ts";
 import figlet from "npm:figlet";
+import { getInput } from "./src/lib/helper.ts";
+import { MarioKartCharacterFactory } from "./src/domains/factory/index.ts";
+import { Character } from "./src/models/index.ts";
 
-async function getInput(prompt: string): Promise<string> {
-  const buf = new Uint8Array(1024);
-  await Deno.stdout.write(new TextEncoder().encode(prompt));
-  const n = <number> await Deno.stdin.read(buf);
-  return new TextDecoder().decode(buf.subarray(0, n)).trim();
-}
-
-async function main() {
+function main() {
   figlet(
     "Mario Kart Simulator!",
     async (err: unknown, data: string | undefined) => {
@@ -22,10 +16,11 @@ async function main() {
       console.log(data);
 
       console.log("Welcome to Mario Kart Simulator! Made By Fiantso Harena!");
-      console.log("Choose your character:");
+      console.log("Choose your character : ");
       console.log("1. Mario (balanced: speed 2, stability 2)");
       console.log("2. Luigi (slow but stable: speed 1, stability 3)");
       console.log("3. Peach (fast but unstable: speed 3, stability 1)");
+
       const factory = new MarioKartCharacterFactory();
       let character: Character | null = null;
 
@@ -44,7 +39,7 @@ async function main() {
               character = factory.createCharacter("peach");
               break;
             default:
-              console.log("Invalid choice. Please enter 1, 2, or 3.");
+              console.log("Invalid choice. Please enter 1, 2, or 3");
           }
         } catch (error: unknown) {
           if (error instanceof Error) {
