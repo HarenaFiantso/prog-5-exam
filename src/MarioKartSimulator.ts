@@ -1,4 +1,5 @@
 import { Character } from "./models/index.ts";
+import chalk from "npm:chalk";
 
 export class MarioKartSimulator {
   private readonly trackLength: number;
@@ -13,6 +14,7 @@ export class MarioKartSimulator {
 
   /**
    * @author Fiantso Harena
+   *
    * Simulates rolling a standard six-sided dice
    * @returns {number} A random integer between 1 and 6 (inclusive).
    */
@@ -38,9 +40,11 @@ export class MarioKartSimulator {
   }
 
   async play(): Promise<void> {
-    console.log(`Let's go! ${this.player.name}!`);
+    console.log(chalk.bold(`Let's go! ${this.player.name}!`));
     console.log(
-      `Speed: ${this.player.speed}, Stability: ${this.player.stability}`,
+      chalk.blue(
+        `Informations: Speed: ${this.player.speed}, Stability: ${this.player.stability}`,
+      ),
     );
 
     while (this.playerPosition < this.trackLength - 1) {
@@ -59,7 +63,7 @@ export class MarioKartSimulator {
     }
 
     console.log(
-      `\n🎉 Youpiiii! ${this.player.name} finished the race in ${this.turns} turns!`,
+      `\nYoupiiii! ${this.player.name} finished the race in ${this.turns} turns!`,
     );
   }
 

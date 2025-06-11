@@ -3,6 +3,7 @@ import figlet from "npm:figlet";
 import { getInput } from "./src/lib/helper.ts";
 import { MarioKartCharacterFactory } from "./src/domains/factory/index.ts";
 import { Character } from "./src/models/index.ts";
+import chalk from "npm:chalk";
 
 function main() {
   figlet(
@@ -15,11 +16,23 @@ function main() {
       }
       console.log(data);
 
-      console.log("Welcome to Mario Kart Simulator! Made By Fiantso Harena!");
+      console.log(
+        chalk.bold(
+          "Welcome to Mario Kart Simulator! Made By Fiantso Harena!",
+        ),
+      );
       console.log("Choose your character : ");
-      console.log("1. Mario (balanced: speed 2, stability 2)");
-      console.log("2. Luigi (slow but stable: speed 1, stability 3)");
-      console.log("3. Peach (fast but unstable: speed 3, stability 1)");
+      console.log(
+        chalk.italic.blue("1. Mario (balanced: speed 2, stability 2)"),
+      );
+      console.log(
+        chalk.italic.green("2. Luigi (slow but stable: speed 1, stability 3)"),
+      );
+      console.log(
+        chalk.italic.yellow(
+          "3. Peach (fast but unstable: speed 3, stability 1)",
+        ),
+      );
 
       const factory = new MarioKartCharacterFactory();
       let character: Character | null = null;
