@@ -1,5 +1,8 @@
 import MarioKartSimulator from "./src/MarioKartSimulator.ts";
 
-const app = new MarioKartSimulator();
+function main() {
+  const app = new MarioKartSimulator();
+  app.play();
+}
 
-app.run();
+if (import.meta.main) main();
