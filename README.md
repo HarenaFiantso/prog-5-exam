@@ -4,12 +4,39 @@
 ![deno](https://img.shields.io/badge/Deno-v2.3.3-green?logo=deno)
 ![License](https://img.shields.io/badge/License-MIT-violet)
 
+---
+
 ## 🎯 Objectif
 
 Vous devez concevoir une **mini-simulation console** d'une course _Mario Kart_
 avec les personnages les plus célèbres.\
 La course se déroule sur une **ligne droite** de 20 cases, et chaque joueur
 avance en fonction de ses capacités.
+
+---
+
+## 🖥️ Installation
+
+```bash
+    git clone https://github.com/HarenaFiantso/prog-5-exam.git
+    cd prog-5-exam
+    deno install
+    deno run main.ts
+```
+
+---
+
+## 🖼️ Aperçu
+
+<p style="margin-top: 20px; margin-bottom: 50px;">
+  <img src="./public/preview.png" width="1920"  alt="Preview" />
+</p>
+
+---
+
+## Démonstration
+
+https://github.com/user-attachments/assets/a7cecdb2-c12e-46c9-8bbc-07034c521408
 
 ---
 
@@ -38,17 +65,3 @@ avance en fonction de ses capacités.
 
 ---
 
-## 🖥️ Installation
-
-```bash
-    git clone https://github.com/HarenaFiantso/prog-5-exam.git
-    cd prog-5-exam
-    deno install
-    deno run main.ts
-```
-
-### 🖼️ Aperçu
-
-<p style="margin-top: 20px; margin-bottom: 50px;">
-  <img src="./public/preview.png" width="1920"  alt="Preview" />
-</p>
